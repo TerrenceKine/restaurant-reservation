@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+    <div class="container text-center">
+        <h1 class="display-4">Welcome to Hexa Restaurant</h1>
+        <p class="lead">Experience the finest dining with our exquisite cuisine and impeccable service</p>
+        <a href="{{ url_for('reserve') }}" class="btn btn-primary btn-lg">Make a Reservation</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Elegant Dining</h5>
+                    <p class="card-text">Experience our sophisticated atmosphere and premium service in the heart of the city.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Exquisite Menu</h5>
+                    <p class="card-text">Savor our chef's specially crafted dishes made with the finest ingredients.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Easy Reservations</h5>
+                    <p class="card-text">Book your table online and receive instant confirmation for your dining experience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-12 text-center">
+            <h2 class="mb-4">Opening Hours</h2>
+            <p>Monday - Friday: 11:00 AM - 10:00 PM</p>
+            <p>Saturday - Sunday: 10:00 AM - 11:00 PM</p>
+            <div class="mt-4">
+                <a href="{{ url_for('reserve') }}" class="btn btn-outline-primary">Reserve Your Table Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

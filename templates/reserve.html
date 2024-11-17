@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="reservation-form">
+                <h2 class="text-center mb-4">Reserve Your Table at Hexa Restaurant</h2>
+                <p class="text-center mb-4">Experience exceptional dining with us</p>
+                <form method="POST" action="{{ url_for('reserve') }}">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
+                        <div class="form-text">We'll send your reservation confirmation to this email.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Preferred Date</label>
+                        <input type="date" class="form-control" id="date" name="date" required min="{{ today }}">
+                    </div>
+                    <div class="mb-3">
+                        <label for="time" class="form-label">Preferred Time</label>
+                        <select class="form-control" id="time" name="time" required>
+                            <option value="">Select a time</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="11:30">11:30 AM</option>
+                            <option value="12:00">12:00 PM</option>
+                            <option value="12:30">12:30 PM</option>
+                            <option value="13:00">1:00 PM</option>
+                            <option value="13:30">1:30 PM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="18:00">6:00 PM</option>
+                            <option value="18:30">6:30 PM</option>
+                            <option value="19:00">7:00 PM</option>
+                            <option value="19:30">7:30 PM</option>
+                            <option value="20:00">8:00 PM</option>
+                            <option value="20:30">8:30 PM</option>
+                            <option value="21:00">9:00 PM</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="party_size" class="form-label">Number of Guests</label>
+                        <select class="form-control" id="party_size" name="party_size" required>
+                            <option value="">Select number of guests</option>
+                            {% for i in range(1, 11) %}
+                                <option value="{{ i }}">{{ i }} {% if i == 1 %}person{% else %}people{% endif %}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg">Confirm Reservation</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

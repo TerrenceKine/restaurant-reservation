@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Current Reservations</h2>
+    {% if reservations %}
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Party Size</th>
+                        <th>Table</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reservation in reservations %}
+                        <tr>
+                            <td>{{ reservation.customer_name }}</td>
+                            <td>{{ reservation.date.strftime('%Y-%m-%d') }}</td>
+                            <td>{{ reservation.time.strftime('%H:%M') }}</td>
+                            <td>{{ reservation.party_size }}</td>
+                            <td>Table {{ reservation.table.table_number }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    {% else %}
+        <div class="alert alert-info">
+            No reservations found.
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
