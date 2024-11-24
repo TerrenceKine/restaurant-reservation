@@ -1,0 +1,108 @@
+/* Custom styles for Hexa Restaurant */
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(26, 26, 26, 0.7), rgba(26, 26, 26, 0.7)), url('../img/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+/* Reservation Form */
+.reservation-form {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+    border: 1px solid #ddd;
+    padding: 0.8rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #c8a97e;
+    box-shadow: 0 0 0 0.2rem rgba(200, 169, 126, 0.25);
+}
+
+.form-label {
+    font-weight: 500;
+    color: #1a1a1a;
+}
+
+/* Custom Button Styles */
+.btn-primary {
+    background-color: #c8a97e;
+    border-color: #c8a97e;
+    padding: 0.8rem 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #b69468;
+    border-color: #b69468;
+    transform: translateY(-2px);
+}
+
+/* Info Card */
+.card {
+    border: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* Icons */
+.fas {
+    color: #c8a97e;
+}
+
+/* Time Select Groups */
+optgroup {
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .reservation-form {
+        padding: 1.5rem;
+    }
+    
+    .btn-primary {
+        width: 100%;
+    }
+}
+
+/* Animations */
+.reservation-form {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
